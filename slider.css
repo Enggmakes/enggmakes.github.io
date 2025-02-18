@@ -1,0 +1,37 @@
+ .Delivery ul{
+        line-height: 25px;
+       list-style-type:none;
+       padding-left: 10px;
+       margin: 0;
+    }
+       .prices ul{
+        line-height: 34px;
+       list-style-type:none;
+       padding-left: 10px;
+       margin: 0;
+       }
+       .category ul ,.category a{
+        line-height: 34px;
+       list-style-type:none;
+       padding-left:10px ;
+       margin: 0;
+       text-decoration: none;
+       color: #000000;
+       }
+       .category a:hover{
+        color: #d00909;
+        transition: 1s ;
+       }
+       .product_type ul, .product_type a{
+        line-height: 34px;
+        list-style-type:none;
+        padding-left:10px ;
+        margin: 0;
+        text-decoration: none;
+        color: #000000;
+       }
+    
+       #head_filters{
+        font-size: 20px;
+        font-weight: bold;
+       }

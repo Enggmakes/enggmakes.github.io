@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Jersey+20&family=Lalezar&family=PT+Serif+Caption:ital@0;1&family=Ramaraja&display=swap" rel="stylesheet">        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: aliceblue;
+                box-sizing: border-box;
+                margin: 0;
+            }
+            [class*="col-"]
+            {width:100%;}
+            @media only screen and (min-width:678px) {
+                
+                .col-1{width: 8.33%;}
+                .col-2{width: 16.66%;}
+                .col-3{width: 24.99%;}
+                .col-4{width: 33.32%;}
+                .col-5{width: 41.65%;}
+                .col-6{width: 49.98%;}
+                .col-7{width: 58.31%;}
+                .col-8{width: 66.64%;}
+                .col-9{width: 74.97%;}
+                .col-10{width: 83.3%;}
+                .col-11{width: 91.63%;}
+                .col-12{width: 100%;}
+                
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;     
+            }
+            #head{
+                background-color: #333333; 
+  border-bottom: 2px solid #007BFF; }
+            #logo
+            {
+                margin-left: 10px;
+                
+            }
+            #menu{
+                
+                align-content: center;
+               /* background-color: chartreuse;*/
+            }
+            #ul-head{
+                display: inline;
+                margin-left: -3px;
+                text-decoration: none;     
+                
+            }
+            
+            .info1{
+                 padding: 2%;
+             align-content: center;
+                text-align: justify;
+                
+            }
+            .part1{
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+               
+            }
+           video{
+            border-radius: 20px;
+            box-shadow: 0px 2px 6px black;
+           }
+            .video1{
+                padding: 2%;
+                align-content: center;
+            }
+           
+
+
+        .footer{
+            background-color: #1A1A1A; /* Dark grayish black */
+            color: #D3D3D3;
+            border-top: 2px solid #FFD700;  
+            background-color: #2C2C2C; 
+            color: #D3D3D3; 
+            padding: 10px 0;
+
+        }
+       #info{
+        text-align: center;
+       }
+       .par{
+       
+        text-shadow:2px 2px 2px #868a8a;
+       
+      
+        font-size: 30px;
+       }
+       #head2{
+        text-shadow:2px 2px 5px #756572;
+        font-size: 30px;
+       
+        font-weight: bold;
+        color: rgb(63, 2, 2);
+        text-align: center;
+       }
+       .whole{
+        background: linear-gradient(to bottom,rgb(212, 216, 218),rgb(237, 241, 244), #87ac84);
+          
+       }
+       #head3{
+        text-shadow:2px 2px 5px #756572;
+        font-size: 25px;
+        
+        font-weight: bold;
+        color: rgb(63, 2, 2);
+        text-align: center;
+       }
+
+
+        </style> 
+    </head>
+    <body>
+        
+  
+        <div class="col-12 header" id="head">
+            <div id="logo">
+                <a href=""><img src="pic/aryanLOGO.png" alt="" height="60px"></a>
+            </div>
+            <div class="col-5" id="menu">
+                <ul id="ul-head">    
+                    <div class="dropdown">
+                       <a href="index.html"> <button class="dropbtn">HOME</button></a>
+                      </div>
+                      <div class="dropdown">
+                        <button class="dropbtn">PRODUCTS</button>
+                        <div class="dropdown-content slideInUp">
+                        <span id="hover-head">Normal Works</span>
+                          <a href="./numberplate_html/numberplate.html">Number plates</a>
+                          <a href="./keychain_html/keychain.html">key chain</a>
+                          <a href="./signboard_html/signboard.html">Sign board</a>
+                          <a href="paint_html/paint.html">Painting</a>
+                          <span id="hover-head">Premium Work</span>
+                          <a href="wrap_html/wrap.html">Wraping</a>
+                          <a href="neon_html/neon.html">Neon board</a>
+                          <a href="ppf_html/ppf.html">paint protection</a>
+                          <a href="other_html/other.html">other services</a>
+                        </div>
+                      </div>
+                      <div class="dropdown">
+                       <a href="about.html"> <button class="dropbtn">ABOUT US</button></a>
+                        <!-- <div class="col-12 dropdown-content" style="background-color: inherit;">
+                            <video src="./pic/backvideo.mp4" autoplay loop></video>
+                          <img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200">
+                          
+                          </div> -->
+                      </div>
+                      <div class="dropdown">
+                       <a href="Contact.html"> <button class="dropbtn">CONTACT US</button></a>
+                        
+                      </div>
+                     
+                        
+                </ul>
+            
+                
+            </div>
+        </div>
+        <div class="whole">
+            <div class="col-12 part1" >
+            <div class="col-5 info1">
+                <div id="head2"><h2>PAINTNG</h2></div>
+                <p class="par">At Aryan Redium, we specialize in premium automotive painting services that transform your vehicle into a masterpiece. With advanced painting techniques, high-quality materials, and a team of experts, we ensure flawless finishes that enhance both the aesthetics and durability of your vehicle. Whether it's a custom color, scratch repair, or a complete makeover, our painting solutions bring life to your vision.</p></div>
+            <div class="col-5 video1"><div id="vid"><video width="100%" src="pic/large.mp4" loop autoplay muted></video></div></div>
+        </div>
+        <div class="col-12 part1">
+            <div class="col-5 video1"><div id="vid"><video width="100%" src="pic/redium.mp4" loop autoplay muted></video></div></div>
+            
+            <div class="col-5 info1">
+                <div id="head3" ><h2>REDIUM</h2></div>
+                <p class="par">At Aryan Redium, we bring brilliance to your signage with cutting-edge reflective redium solutions. From stylish number plates to vibrant signboards, our precision laser cutting and premium materials ensure unmatched quality and visibility. </p></div>
+
+        </div>
+    </div>
+        
+        <div class="footer" id="foot">
+            <div id="info">
+            <p>© 2025 Aryan Redium. All rights reserved.</p>
+            <p>Working Hours: Monday to Saturday: 9:00 AM - 7:00 PM | Sunday: Closed</p>
+        </div>
+        </div>
+       
+    </body>  
+</html>

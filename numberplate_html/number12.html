@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+        <link rel="stylesheet" href="styles.css">
+         <style>
+            body{
+                background-color: rgb(165, 172, 179);
+                box-sizing: border-box;
+                margin: 0;
+            }
+            [class*="col-"]
+            {width:100%;}
+            @media only screen and (min-width:678px) {
+                
+                .col-1{width: 8.33%;}
+                .col-2{width: 16.66%;}
+                .col-3{width: 24.99%;}
+                .col-4{width: 33.32%;}
+                .col-5{width: 41.65%;}
+                .col-6{width: 49.98%;}
+                .col-7{width: 58.31%;}
+                .col-8{width: 66.64%;}
+                .col-9{width: 74.97%;}
+                .col-10{width: 83.3%;}
+                .col-11{width: 91.63%;}
+                .col-12{width: 100%;}
+                
+            }
+            .header {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;     
+            }
+            #head{
+                background-color: #333333; 
+                 }
+            #logo
+            {
+                margin-left: 10px;
+                
+            }
+            #menu{
+                
+                align-content: center;
+               /* background-color: chartreuse;*/
+            }
+            #ul-head{
+                display: inline;
+                margin-left: -3px;
+                text-decoration: none;     
+                 
+            }
+            
+            .location{
+                color:white;
+                font-size: 10px;
+                 background-color: #333333; 
+                border-bottom:2px solid #007BFF;;
+
+            }
+            .location a{
+                color: #D3D3D3;
+                font-size: 15px;
+                text-decoration: none;
+            }
+           
+            .whole{
+                position: relative;
+                display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 2%;
+            }
+          
+
+
+
+
+
+
+
+        .footer{
+            background-color: #1A1A1A; /* Dark grayish black */
+            color: #D3D3D3;
+            border-top: 2px solid #FFD700;  
+            background-color: #2C2C2C; 
+            color: #D3D3D3; 
+            padding: 10px 0;
+
+        }
+       #info{
+       
+        text-align: center;
+       }
+      .left-div{
+       
+        position: relative;
+      }
+      .img-div1{
+        background-color: aqua;
+        
+        position: absolute;
+      }
+      .img-div{
+   
+         position: sticky;
+        top:0;
+        bottom: 0;
+        
+      }
+      .right-div{
+       
+  
+      }
+    .title{
+        padding: 1%;
+        font-family: "Roboto", serif;
+        font-size: 50px;
+        font-weight: bolder;
+        
+    }
+    .price{
+       
+    
+       padding: 1%;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    .tax{
+        
+       
+        padding: 1%;
+      
+    }
+    .choiceNumber input{
+       
+            width: 40%;
+            height: 45px;
+    }
+    .choiceNumber{
+        padding: 1%;
+    }
+    .number-taken {
+  
+        border: 1px solid black;
+        
+        background-color: #ffffff;
+    }
+    ::placeholder{
+        text-align: center;
+        color: #565050;
+    }
+   
+    .buttons{
+       padding: 2%;
+        line-height: 60px;
+    }
+    .addcard button{
+        height: 50px;
+        font-size: 23px;
+       border: 1px solid black;
+        width: 80%;
+    }
+    .buy button{
+        background-color: rgb(5, 5, 5);
+        color: white;
+        font-size: 23px;
+        height: 50px;
+        width: 80%;
+        border: 1px solid black;
+    }
+    .addcard button:hover, .buy button:hover{
+        border: 2px solid black;
+    }
+    .extra-info{
+        font-size: 20px;
+font-weight: 500;
+        font-family: "Roboto", serif;
+        line-height: 40px;
+    }
+
+
+
+
+    .cat1{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;   
+    }
+    .col-2{
+        background:linear-gradient(to bottom, rgb(214, 144, 144), rgb(195, 220, 236)); /* Soft white */
+        border: 1px solid #E0E0E0; /* Light gray border */
+        box-shadow:2px 4px 6px black;            
+        border-radius: 8px;
+        height: auto;
+        border-radius: 5px;
+        padding: 20px;
+        margin: 2%;
+        color: #333333;
+    }
+  
+    .img1{
+       box-shadow:2px 2px 5px black;
+        border-radius: 5px;
+    }
+    #text{
+        color: #333333;     
+        
+        font-weight: 400;
+        font-style: normal;
+        font-size: 23px;
+        text-align: center;
+    }
+   
+
+        </style> 
+    </head>
+    <body>
+        
+  
+        <div class="col-12 header" id="head">
+            <div id="logo">
+                <a href=""><img src="../pic/aryanLOGO.png" alt="" height="60px"></a>
+            </div>
+            <div class="col-5" id="menu">
+                <ul id="ul-head">    
+                    <div class="dropdown">
+                        <a href="../index.html"><button class="dropbtn">HOME</button></a>
+                      </div>
+                      <div class="dropdown">
+                        <button class="dropbtn">PRODUCTS</button>
+                        <div class="dropdown-content slideInUp">
+                        <span id="hover-head">Normal Works</span>
+                          <a href="numberplate.html">Number plates</a>
+                          <a href="../keychain_html/keychain.html">key chain</a>
+                          <a href="../signboard_html/signboard.html">Sign board</a>
+                          <a href="../paint_html/paint.html">Painting</a>
+                          <span id="hover-head">Premium Work</span>
+                          <a href="../wrap_html/wrap.html">Wraping</a>
+                          <a href="../neon_html/neon.html">Neon board</a>
+                          <a href="../ppf_html/ppf.html">paint protection</a>
+                          <a href="../other_html/other.html">other services</a>
+                        </div>
+                      </div>
+                      <div class="dropdown">
+                        <a href="../about.html"><button class="dropbtn">ABOUT US</button></a>
+                        <!-- <div class="col-12 dropdown-content" style="background-color: inherit;">
+                            <video src="./pic/backvideo.mp4" autoplay loop></video>
+                          <img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200">
+                          
+                          </div> -->
+                      </div>
+                      <div class="dropdown">
+                       <a href="../Contact.html"> <button class="dropbtn">CONTACT US</button></a>
+                        
+                      </div>
+                     
+                        
+                </ul>
+            
+                
+            </div>
+        </div>
+        <div class="location"> <a href="../index.html" >Home</a> ><a href="../numberplate_html/numberplate.html">Number Plates</a>><a href="../numberplate_html/number12.html">Number12</a></div>
+        
+        <div class="whole">
+            <div class="col-6 left-div">
+                <div class="img-div"> <center><img src="../pic/numberplates/number12.jpeg" alt="" width="80%" height="70%"></center></div>
+            </div>
+            <div class="col-6 right-div">
+                <div class="title">Legal press Number plate for Car and Bike with any size.</div>
+                <div style="padding: 1%;opacity:60%;">aryanredium</div>
+                <div class="price">RS.1799</div>
+                <div class="tax"> Tax included. <a href="shopping.html" style="color: black;"> Shipping </a> Calxulated at checkout</div>
+                <div class="choiceNumber">Enter Your Number
+                <div class="text-box-number"><input type="text" placeholder="MH.17.CP.9418" class="number-taken"></div>
+                </div>
+                <div class="buttons">
+                   <div class="addcard"><button>Add to Cart</button></div>
+                    <div class="buy"><button>Buy Now</button></div>
+                </div>
+                <div class="aa" hidden> <p>aryansdabfjhbin</p></div>
+                <div class="extra-info">
+                    <ul class="extra-info1">
+                        <li>Base Metal/Material - Acrylic material made in India </li>
+                        <li>Quality - AAA+ Quality Acrylics sheets</li>
+                        <li>Suitability - All type of Bikes </li>
+                        <li>Dimensions - 25 cm + Adjustable </li>
+                        <li>Content - Number Plate </li>
+                        <li>Net Qty - 1 piece</li>
+                    </ul>
+                </div>
+            </div>
+            
+        </div>
+        <div style="border-bottom: 2px solid black; opacity:50%"></div>
+         <div><span style="font-weight: bold; font-size:23px; padding:2%">YOU ALSO LIKE THIS</span>
+            <div class="col-12 cat1">
+                <div class="col-2"><div ><a href="../wrap_html/wrap.html"><img class="img1" src="../pic/wrap/wrap4.jpg" alt="" width="100%" ></div></a> <div id="text">WRAPING</div></div>
+                <div class="col-2"><div ><a href="../neon_html/neon.html"><img class="img1" src="../pic/Neon/neon1.jpg" alt="" width="100%" ></div></a> <div id="text">NEON LIGHT BOARD</div></div>
+                <div class="col-2"><div ><a href="../ppf_html/ppf.html"><img class="img1" src="../pic/PPF/ppf1.jpeg" alt="" width="100%" ></div></a> <div id="text">PAINT PROTECTION</div></div>
+                <div class="col-2"><div ><a href="../other_html/other.html"><img class="img1" src="../pic/polishing/polish1.jpg" alt="" width="100%" ></a></div> <div id="text">OTHER SERVICES</div></div>
+              </div>
+            </div>
+        
+
+        
+       
+        
+        <div class="footer" id="foot">
+            <div id="info">
+            <p>© 2025 Aryan Redium. All rights reserved.</p>
+            <p>Working Hours: Monday to Saturday: 9:00 AM - 7:00 PM | Sunday: Closed</p>
+        </div>
+        </div>
+       
+    </body>  
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .product-info {
+            padding: 15px;
+            background-color: #f1f1f1;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .product-info p {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .btn {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Payment Details</h2>
+
+        <div class="product-info">
+            <p><strong>Product Name:</strong> <span id="productName">Loading...</span></p>
+            <p><strong>Price:</strong> Rs. <span id="productPrice">Loading...</span></p>
+        </div>
+
+        <button id="payBtn" class="btn">Pay Now</button>
+    </div>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Set product details from URL parameters
+        const productName = getQueryParam("name") || "Unknown Product";
+        const productPrice = getQueryParam("price") || "0";
+
+        document.getElementById("productName").innerText = productName;
+        document.getElementById("productPrice").innerText = productPrice;
+
+        document.getElementById("payBtn").addEventListener("click", function () {
+            var options = {
+                "key": "rzp_test_XXXXXXXXXXXXXXXX", // Replace with your Razorpay Key ID
+                "amount": parseInt(productPrice) * 100, // Razorpay works with paisa, so multiply by 100
+                "currency": "INR",
+                "name": "Your Store Name",
+                "description": productName,
+                "image": "your-logo.png", // Optional: Add your store logo
+                "handler": function (response) {
+                    alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
+                    window.location.href = "success.html";
+                },
+                "prefill": {
+                    "name": "Customer Name",
+                    "email": "customer@example.com",
+                    "contact": "9999999999"
+                },
+                "theme": {
+                    "color": "#007BFF"
+                }
+            };
+
+            var rzp1 = new Razorpay(options);
+            rzp1.open();
+        });
+    </script>
+
+</body>
+</html>

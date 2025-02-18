@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Jersey+20&family=Lalezar&family=PT+Serif+Caption:ital@0;1&family=Ramaraja&display=swap" rel="stylesheet">        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles.css">
+        <style>
+            body{
+                background-color: rgb(165, 172, 179);
+                box-sizing: border-box;
+                margin: 0;
+            }
+            [class*="col-"]
+            {width:100%;}
+            @media only screen and (min-width:678px) {
+                
+                .col-1{width: 8.33%;}
+                .col-2{width: 16.66%;}
+                .col-3{width: 24.99%;}
+                .col-4{width: 33.32%;}
+                .col-5{width: 41.65%;}
+                .col-6{width: 49.98%;}
+                .col-7{width: 58.31%;}
+                .col-8{width: 66.64%;}
+                .col-9{width: 74.97%;}
+                .col-10{width: 83.3%;}
+                .col-11{width: 91.63%;}
+                .col-12{width: 100%;}
+                
+            } 
+            
+
+
+            .header {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;     
+            }
+            #head{
+                background-color: #333333; 
+                 }
+            #logo
+            {
+                margin-left: 10px;
+                
+            }
+            #menu{
+                
+                align-content: center;
+               /* background-color: chartreuse;*/
+            }
+            #ul-head{
+                display: inline;
+                margin-left: -2px;
+                text-decoration: none;     
+                
+            }
+            .img1:hover{
+                transition: 0.7s;
+                transform: scale(1.3);
+            }
+            .img-size{
+            
+                overflow: hidden;
+                }
+         
+            .location{
+                color:white;
+                font-size: 10px;
+                 background-color: #333333; 
+                border-bottom:2px solid #007BFF;;
+
+            }
+            .location a{
+                color: #D3D3D3;
+                font-size: 15px;
+                text-decoration: none;
+            }
+           
+            .whole{
+                position: relative;
+                display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            }
+            .products{
+                background-color: #D3D3D3;
+                
+            }
+            .slider{
+                background-color: rgb(194, 195, 195);
+              }
+
+
+            .plates{
+             line-height: 25px;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+            }
+            .plate{background:linear-gradient(to bottom, rgb(235, 187, 187), rgb(205, 222, 233)); /* Soft white */
+                border: 1px solid #E0E0E0; /* Light gray border */
+                box-shadow:2px 4px 6px black;            
+                border-radius: 8px;
+                height: auto;
+                border-radius: 5px;
+                padding: 20px;
+                margin: 2%;
+                color: #333333;
+            }
+            .plate a{
+                
+                color: #333333;
+                text-decoration: none;
+            }
+            #text{
+              /*  color: #333333;     
+                font-family: "Anton", serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 23px;
+                text-align: center;*/
+            }
+            #info2{
+                font-weight: bold;
+                color: rgb(0, 0, 0); 
+                text-align: justify;
+
+            }
+            #info2:hover{
+                transition: 0.1s ease-in-out ;
+                color: #470505;
+            }
+            #prices{
+                
+                color: rgb(0, 0, 0);
+            }
+            
+           
+           #add_to_cart{
+            padding: 2%;
+           }
+            #add_button{
+                
+                border: 1px solid;
+                
+                height: 30px;
+                color: #000000;
+                border-radius: 13px;
+                background-color: #FFD700;
+            }
+            #add_button:hover{
+                color: white;
+                background-color: rgb(255, 136, 0);
+            }
+           
+            .slid{
+                top:0;
+                left:0;
+                position: absolute;
+                background-color: #470505;
+            }
+            .Delivery ul{
+                line-height: 25px;
+            list-style-type:none;
+            
+            margin: 0;
+            }
+            .prices ul{
+                line-height: 34px;
+            list-style-type:none;
+            
+            margin: 0;
+            }
+            .category ul ,.category a{
+                line-height: 34px;
+            list-style-type:none;
+            
+            margin: 0;
+            text-decoration: none;
+            color: #000000;
+            }
+            .category a:hover{
+                color: #d00909;
+                transition: 1s ;
+            }
+            .product_type ul, .product_type a{
+                line-height: 34px;
+                list-style-type:none;
+                
+                margin: 0;
+                text-decoration: none;
+                color: #000000;
+            }
+            
+            #head_filters{
+                margin-left:42px ;
+                font-size: 20px;
+                font-weight: bold;
+            }
+        
+
+
+
+
+
+
+
+        .footer{
+            background-color: #1A1A1A; /* Dark grayish black */
+            color: #D3D3D3;
+            border-top: 2px solid #FFD700;  
+            background-color: #2C2C2C; 
+            color: #D3D3D3; 
+            padding: 10px 0;
+
+        }
+       #info{
+       
+        text-align: center;
+       }
+      
+
+        </style> 
+    </head>
+    <body>
+        
+  
+        <div class="col-12 header" id="head">
+            <div id="logo">
+                <a href=""><img src="../pic/aryanLOGO.png" alt="" height="60px"></a>
+            </div>
+            <div class="col-5" id="menu">
+                <ul id="ul-head">    
+                    <div class="dropdown">
+                        <a href="../index.html"><button class="dropbtn">HOME</button></a>
+                      </div>
+                      <div class="dropdown">
+                        <button class="dropbtn">PRODUCTS</button>
+                        <div class="dropdown-content">
+                        <span id="hover-head">Normal Works</span>
+                          <a href="../numberplate_html/numberplate.html">Number plates</a>
+                          <a href="../keychain_html/keychain.html">key chain</a>
+                          <a href="../signboard_html/signboard.html">Sign board</a>
+                          <a href="../paint_html/paint.html">Painting</a>
+                          <span id="hover-head">Premium Work</span>
+                          <a href="../wrap_html/wrap.html">Wraping</a>
+                          <a href="../neon_html/neon.html">Neon board</a>
+                          <a href="../ppf_html/ppf.html">paint protection</a>
+                          <a href="../other_html/other.html">other services</a>
+                        </div>
+                      </div>
+                      <div class="dropdown">
+                        <a href="../about.html"><button class="dropbtn">ABOUT US</button></a>
+                        <!-- <div class="col-12 dropdown-content" style="background-color: inherit;">
+                            <video src="./pic/backvideo.mp4" autoplay loop></video>
+                          <img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200">
+                          
+                          </div> -->
+                      </div>
+                      <div class="dropdown">
+                       <a href="../Contact.html"> <button class="dropbtn">CONTACT US</button></a>
+                        
+                      </div>
+                     
+                        
+                </ul>
+            
+                
+            </div>
+        </div>
+        <div class="location"> <a href="../index.html" >Home</a> ><a href="../neon_html/neon.html">Neon Lights</a></div>
+        
+        <div class="whole">
+
+           
+   <!-- <style>
+    @media(max-width:328px) {
+        .slider{
+            display: none;
+        }
+        
+    }
+   </style> -->
+   <div class="col-2 slider" style="position: relative;">
+    <div style="position: sticky; top:0">
+    <div class="Delivery"> <span id="head_filters"> Delivery</span>
+        <ul>
+            <li> <input type="checkbox">   Get it by Tomorrow </li>
+    <li> <input type="checkbox">        Get it in 3 days</li>
+    </ul>
+    </div>
+    <div style="border-bottom: 1px solid black;"></div>
+    <div class="prices"><span id="head_filters"> Price</span>
+        <ul>   
+        <li> <input type="checkbox">   Under ₹500</li>
+        <li><input type="checkbox">  ₹501 - ₹800</li>
+        <li> <input type="checkbox">   ₹899 - ₹1000</li>
+    <li> <input type="checkbox">    ₹1000 - ₹1500</li>
+        <li>  <input type="checkbox">   Over ₹1500</li>
+        </ul>
+    </div>
+    <div style="border-bottom: 1px solid black;"></div>
+    <div class="category"><span id="head_filters">Category</span>
+        <ul>   
+        <li>  <a href="">Car & Motorbike</a> </li>
+        <li>  <a href="">Car Registration Plate Holders</a></li>
+        <li>    <a href="">Motorbike Accessories & Parts</a></li>
+        <li>   <a href="">Registration Plates</a></li>
+        <li>   <a href="">Protective Frames</a></li> 
+    </ul>     
+    </div>
+    <div style="border-bottom: 1px solid black;"></div>
+    <div class="product_type"><span id="head_filters">Product Type</span>
+        <ul>   
+            <li>  <a href="">Multi Colored</a> </li>
+            <li>  <a href="">Single Colored</a></li>
+        <li>    <a href="">customised styles</a></li>
+        <li>   <a href="">pre-build Designs</a></li>
+        <li>   <a href="">Protective Frames</a></li> 
+        </ul>     
+    </div>
+</div>
+</div>
+            <div class="col-10 products">
+                <div class="plates">
+                   <div class="col-2 plate"><a href="neon1.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon1.jpg" alt="" width="100%" ></div> 
+                    <div id="text">
+                        
+                        <div id="info2" >Customised Neon sign baord with your suggestion</div>
+                        <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 1599 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 1999</strike></span> </div>
+                        <div id="dis">10% Off on SBI Credit Card</div>
+
+                        <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                        <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+                     </div>
+                    </a></div>
+                    <div class="col-2 plate"><a href="neon2.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon2.webp" alt="" width="100%" ></div> 
+                    <div id="text">                        
+                        <div id="info2" >Hearth Beats Dual Neon sign board look good on study table</div>
+                        <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 1299 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 1999</strike></span> </div>
+                        <div id="dis">10% Off on SBI Credit Card</div>
+                        <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                        <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+                       </div>
+                    </a></div>
+                    <div class="col-2 plate"><a href="neon3.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon3.jpg" alt="" width="100%" ></div> 
+                    <div id="text">
+                        <div id="info2">Lovely Neon sign on Bed room with customised lights</div>
+                        <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 2199 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 2399</strike></span> </div>
+                        <div id="dis">10% Off on SBI Credit Card</div>
+                        <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                        <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+
+                    </div>
+                </a></div>
+                    <div class="col-2 plate"><a href="neon4.html"><div class="img-size"><img class="img1" src="../pic/Neon/floroneon4.webp" alt="" width="100%" ></div> 
+                    <div id="text">
+                        <div id="info2" >Super Angel Wings by neon lights with perfectly match with human height</div>
+                        <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 3499 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 3799</strike></span> </div>
+                        <div id="dis">10% Off on SBI Credit Card</div>
+                        <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                        <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+
+                    </div>
+                </a> </div>
+                </div>
+                <div class="plates">
+                    <div class="col-2 plate"><a href="neon5.html"><div class="img-size"><img class="img1" src="../pic/Neon/floroneon5.webp" alt="" width="100%" ></div> 
+                     <div id="text">
+                         
+                         <div id="info2" >Heart Shape Neaon board for bed room</div>
+                         <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 3199 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 3999</strike></span> </div>
+                         <div id="dis">10% Off on SBI Credit Card</div>
+ 
+                         <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                         <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+                      </div>
+                     </a></div>
+                     <div class="col-2 plate"><a href="neon6.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon6.webp" alt="" width="100%" ></div> 
+                     <div id="text">                        
+                         <div id="info2" >Blue moon on wall of neon lights preaty good looking </div>
+                         <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 1299 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 1999</strike></span> </div>
+                         <div id="dis">10% Off on SBI Credit Card</div>
+                         <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                         <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+                        </div>
+                     </a></div>
+                     <div class="col-2 plate"><a href="neon7.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon7.jpg" alt="" width="100%" ></div> 
+                     <div id="text">
+                         <div id="info2">neon sign of glasses for bars and restaurant</div>
+                         <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 1999 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 2199</strike></span> </div>
+                         <div id="dis">10% Off on SBI Credit Card</div>
+                         <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                         <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+ 
+                     </div>
+                 </a></div>
+                     <div class="col-2 plate"><a href="neon8.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon8.jpg" alt="" width="100%" ></div> 
+                     <div id="text">
+                         <div id="info2" >neon sign of glasses for bars and restaurant for beaches and open side hotels</div>
+                         <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 2399 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 2999</strike></span> </div>
+                         <div id="dis">10% Off on SBI Credit Card</div>
+                         <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                         <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+ 
+                     </div>
+                 </a> </div>
+                 </div>
+                 <div class="plates">
+                    <div class="col-2 plate"><a href="neon9.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon9.jpg" alt="" width="100%" ></div> 
+                     <div id="text">
+                         
+                         <div id="info2" >neon heart shape in red light for wall looks aesthetics</div>
+                         <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 1999 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 2199</strike></span> </div>
+                         <div id="dis">10% Off on SBI Credit Card</div>
+ 
+                         <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                         <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+                      </div>
+                     </a></div>
+                     <div class="col-2 plate"><a href="neon10.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon10.webp" alt="" width="100%" ></div> 
+                     <div id="text">                        
+                         <div id="info2" >realsitics glass of wine on wall look good for bars</div>
+                         <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 2199 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 2399</strike></span> </div>
+                         <div id="dis">10% Off on SBI Credit Card</div>
+                         <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                         <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+                        </div>
+                     </a></div>
+                     <div class="col-2 plate"><a href="neon11.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon11.webp" alt="" width="100%" ></div> 
+                     <div id="text">
+                         <div id="info2">Heart Shape Neaon board for bed room</div>
+                         <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 1999 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 2999</strike></span> </div>
+                         <div id="dis">10% Off on SBI Credit Card</div>
+                         <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                         <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+ 
+                     </div>
+                 </a></div>
+                     <div class="col-2 plate"><a href="neon12.html"><div class="img-size"><img class="img1" src="../pic/Neon/neon12.webp" alt="" width="100%" ></div> 
+                     <div id="text">
+                         <div id="info2" >customised sign in neaon lights for houses and buildings </div>
+                         <div id="prices"><span style="font-size: 28px; font-weight:bold;">&#8377 2399 </span><span style="font-size: 15px;color:darkred;">M.R.P. <strike> &#8377 2599</strike></span> </div>
+                         <div id="dis">10% Off on SBI Credit Card</div>
+                         <div id="dilivery_time"><span>FREE Delivery </span><span style="font-weight: bold;color:black"> Tue 21 Jan</span></div>
+                         <div id="add_to_cart"><center><button id="add_button">Add to cart</button></center></div>
+ 
+                     </div>
+                 </a> </div>
+                 </div>
+                
+            </div>
+           
+        </div>
+
+        
+       
+        
+        <div class="footer" id="foot">
+            <div id="info">
+            <p>© 2025 Aryan Redium. All rights reserved.</p>
+            <p>Working Hours: Monday to Saturday: 9:00 AM - 7:00 PM | Sunday: Closed</p>
+        </div>
+        </div>
+       
+    </body>  
+</html>

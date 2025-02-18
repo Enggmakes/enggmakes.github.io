@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles.css">
+
+    <title>Book Your Appointment</title>
+    <style>
+        body {
+            
+            background:rgb(195, 220, 236);
+            box-sizing: border-box;
+            margin: 0;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;     
+        }
+        #head{
+            background-color: #333333; 
+            border-bottom: 2px solid #007BFF; 
+        }
+        #logo
+        {
+            margin-left: 10px;
+        }
+        #menu{
+            margin:5px;
+            align-content: center;
+    
+        }
+        #ul-head{
+            display: inline;
+            margin-left: -3px;
+            text-decoration: none;     
+            
+        
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;     
+        }
+        #head{
+            background-color: #333333; 
+            border-bottom: 2px solid #007BFF; }
+        #logo
+        {
+            margin-left: 10px;
+            
+        }
+        #menu{
+            
+            align-content: center;
+        /* background-color: chartreuse;*/
+        }
+        #ul-head{
+            display: inline;
+            margin-left: -3px;
+            text-decoration: none;     
+            
+        
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+            margin: auto;
+            box-shadow: 0px 0px 10px gray;
+        }
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #c269eb;
+            color: rgb(18, 15, 15);
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            color:#fff;
+            background-color: #218838;
+        }
+        #form1{
+            margin: 20px;
+        }
+        .footer{
+            background-color: #1A1A1A; /* Dark grayish black */
+            color: #D3D3D3;
+            border-top: 2px solid #FFD700;  
+            background-color: #2C2C2C; 
+            color: #D3D3D3; 
+            padding: 10px 0;
+            height: 110px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="col-12 header" id="head">
+        <div id="logo">
+            <a href=""><img src="../pic/aryanLOGO.png" alt="" height="60px"></a>
+        </div>
+        <div class="col-5" id="menu">
+            <ul id="ul-head">    
+                <div class="dropdown">
+                <a href="../index.html"> <button class="dropbtn">HOME</button></a>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">PRODUCTS</button>
+                    <div class="dropdown-content slideInUp">
+                    <span id="hover-head">Normal Works</span>
+                    <a href="../numberplate_html/numberplate.html">Number plates</a>
+                    <a href="../keychain_html/keychain.html">key chain</a>
+                    <a href="../signboard_html/signboard.html">Sign board</a>
+                    <a href="">Painting</a>
+                    <span id="hover-head">Premium Work</span>
+                    <a href="../wrap_html/wrap.html">Wraping</a>
+                    <a href="../neon_html/neon.html">Neon board</a>
+                    <a href="../ppf_html/ppf.html">paint protection</a>
+                    <a href="../other_html/other.html">other services</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                <a href="about.html"> <button class="dropbtn">ABOUT US</button></a>
+                    <!-- <div class="col-12 dropdown-content" style="background-color: inherit;">
+                        <video src="./pic/backvideo.mp4" autoplay loop></video>
+                    <img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200">
+                    
+                    </div> -->
+                </div>
+                <div class="dropdown">
+                <a href="Contact.html"> <button class="dropbtn">CONTACT US</button></a>
+                    
+                </div>
+                
+                    
+            </ul>
+        
+            
+        </div>
+    </div>
+    <div id="form1">
+    <h2>Book Your Vehicle Painting Appointment</h2>
+    <form action="submit_booking.php" method="POST">
+        <label>Vehicle Type:</label>
+        <input type="text" name="vehicle_type" required>
+
+        <br><label>Model(Year):</label><br>
+        <input type="text" name="model" required>
+
+        <br><label>Vehicle Number:</label>
+        <input type="text" name="vehicle_number" required>
+
+        <label>Contact Number:</label>
+        <input type="text" name="customer_contact" required>
+
+        <label>Appointment Date:</label>
+        <input type="date" name="appointment_date" required>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+     </div>
+     <div class="footer" id="foot">
+        <div id="info">
+        <p>© 2025 Aryan Redium. All rights reserved.</p>
+        <p>Working Hours: Monday to Saturday: 9:00 AM - 7:00 PM | Sunday: Closed</p>
+    </div>
+    </div>
+</body>
+</html>

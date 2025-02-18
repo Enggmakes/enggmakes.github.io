@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>aryanredium.store</title>
+        <link rel="icon" type="image/x-icon" href="pic/android-chrome-192x192.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="./styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Jersey+20&family=Lalezar&family=PT+Serif+Caption:ital@0;1&family=Ramaraja&display=swap" rel="stylesheet"> 
+        <script src="jquery.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+            $(document).ready(function(){
+                $("#sub").click(function(){
+                  //  alert("You fill this form");
+                })
+            })
+            function validate(){
+                var FirstName=$("#Firstname").val();
+                if(FirstName==""){
+                       // alert("Enter first name");
+                        $("#errorfname").show();
+                        $("#Firstname").focus();
+                        return false;
+                }
+                else{
+                    $("#errorfname").hide();
+                }
+                var lastName=$("#Lastname").val();
+                if(lastName==""){
+                   // alert("Please enter Last name");
+                    $("#errorlname").show();
+                    $("#Lastname").focus();
+                    return false;
+                } 
+                else{
+                    $("#errorlname").hide();
+                }
+            
+                var email=$("#Email").val();
+                if(email=="")
+                {
+                   //alert("Please Enter email id");
+                    $("#Email").focus();
+                    return false;
+                }
+                var atpos=email.indexOf("@");
+                var dotpos=email.indexOf(".");
+                if(atpos< 1 || (dotpos-atpos)<2)
+                {
+                   /// alert("please enter valid email address");
+                    // to dipslay red small text error under input box 
+                    $("#errorEmail").show();
+                    $("#Email").focus();
+                    return false;
+                }
+                else{
+                    $("#errorEmail").hide();
+                }
+               //Address validation
+            
+                var add=$("#address").val();
+                if(add==""){
+                   // alert("please enter valid address");
+                    $("#erroraddress").show();
+                    $("#address").focus();
+                    return false;
+                }
+                else{
+                   $("#erroraddress").hide();
+            
+                }
+            
+             
+             
+             }
+            
+            function validFname(){
+                var FirstName=$("#Firstname").val();
+                if(FirstName==""){
+                       // alert("Enter first name");
+                        $("#errorfname").show();
+                        $("#Firstname").focus();
+                        return false;
+                }
+                else{
+                    $("#errorfname").hide();
+                }
+            }
+            function validLname(){
+                var lastName=$("#Lastname").val();
+                if(lastName==""){
+                   // alert("Please enter Last name");
+                    $("#errorlname").show();
+                    $("#Lastname").focus();
+                    return false;
+                } 
+                else{
+                    $("#errorlname").hide();
+                }
+            }
+            
+               function validateEmail(){
+                var email=$("#Email").val();
+                if(email=="")
+                {
+                  // alert("Please Enter email id");
+                    $("#Email").focus();
+                    return false;
+                }
+                var atpos=email.indexOf("@");
+                var dotpos=email.indexOf(".");
+                if(atpos< 1 || (dotpos-atpos)<2)
+                {
+                   // alert("please enter valid email address");
+                    // to dipslay red small text error under input box 
+                    $("#errorEmail").show();
+                    $("#Email").focus();
+                    return false;
+                }
+                else{
+                    $("#errorEmail").hide();
+                }
+                }
+                function validAdress(){
+                    var add=$("#address").val();
+                        if(add==""){
+                           // alert("please enter valid address");
+                            $("#erroraddress").show();
+                            $("#address").focus();
+                            return false;
+                        }
+                        else{
+                           $("#erroraddress").hide();
+                    
+                        }
+                       }
+        </script>
+        <style>
+            body{
+                background-color: aliceblue;
+                box-sizing: border-box;
+                margin: 0;
+            }
+            [class*="col-"]
+            {width:100%;}
+            @media only screen and (min-width:678px) {
+                
+                .col-1{width: 8.33%;}
+                .col-2{width: 16.66%;}
+                .col-3{width: 24.99%;}
+                .col-4{width: 33.32%;}
+                .col-5{width: 41.65%;}
+                .col-6{width: 49.98%;}
+                .col-7{width: 58.31%;}
+                .col-8{width: 66.64%;}
+                .col-9{width: 74.97%;}
+                .col-10{width: 83.3%;}
+                .col-11{width: 91.63%;}
+                .col-12{width: 100%;}
+                
+            }
+           
+            .header {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;     
+            }
+            #head{
+                background-color: #333333; 
+                border-bottom: 2px solid #007BFF; }
+            #logo
+            {
+                margin-left: 10px;
+                
+            }
+            #menu{
+                
+                align-content: center;
+               /* background-color: chartreuse;*/
+            }
+            #ul-head{
+                display: inline;
+                margin-left: -3px;
+                text-decoration: none;     
+                  
+            }
+           
+            .banner img{
+                display: block;  
+                
+            }
+           
+            .middle{
+                background: linear-gradient(to bottom,rgb(195, 220, 236), #7a5454);
+                background-size: cover;
+                height: 100%;    
+            }
+           
+           
+            h1{
+                margin: 0px 0px 0px 0px;
+            }
+          
+          .map{
+           
+            width: 100%;
+           
+            
+          }
+          iframe{
+            box-shadow: 0px 0px 2px black;
+            width: 99%;
+          }
+           .contact{
+                        
+  
+               height: 100%;
+               padding-top:2% ;
+                background-size:cover; 
+            }
+            
+           
+           
+          .contact  #info{
+                
+                color: rgb(61, 77, 17);
+                text-align: center;
+            }
+            #us{
+                color: rgb(0, 0, 0);
+                text-align: center;
+                padding: 0px;
+                font-size: 23px;
+                font-weight: bold;
+                text-shadow: 3px 0px 3px #f4e2e2;
+            }
+            
+            
+             #mob{
+                margin: 0px 5px 0px 0px;
+             }
+             .contact-us{
+                margin-top: 30px;
+                margin-bottom: 100px;
+                 justify-content: center;
+                 
+              }
+              .heade{
+                  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  text-align: center;
+                  font-size:23px ;
+                  
+                  
+              }
+
+              .contact-query{
+                  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                  color: #414243;
+                  font-size: 25px;
+                  font-weight: 800;
+                  text-align: center;
+                 
+              }
+              .cont-banner{
+                  filter: brightness(50%);
+              }
+              #phone{
+                margin: 10px;
+              }
+              #hed{
+                  color: rgb(22, 20, 20);
+                  font-size: 25px;
+              }
+              #info1{
+                  color: #401f1f;
+              }
+              #info1:hover{
+                  color: rgb(63, 4, 4);
+              }
+          
+              .icon{
+                  padding: 10px;
+                  justify-content: center;
+                  color: #f5f5f5;
+                  background-color: #0d74e2;
+                  width: auto;
+                  
+                  
+                  border-radius: 5px;
+              }
+              .cont{
+                 width: auto;
+                 
+                 margin: 2%;
+                  padding: 2px;
+                  display: flex;
+                  justify-content: space-around;
+                  flex-wrap: wrap;
+              }
+              .phone-num, .g-mail, .location {
+                display: flex;
+                font-size: 20px;
+               
+                
+              }
+              .col-3{
+                  padding:10px;
+              }
+              .con{
+                  box-sizing: border-box;
+                  line-height: 20px;
+              padding-left: 10px;
+              }   
+                
+       
+       
+       
+       
+        .footer{
+            background-color: #1A1A1A; /* Dark grayish black */
+            color: #D3D3D3;
+            border-top: 2px solid #FFD700;  
+            background-color: #2C2C2C; 
+            color: #D3D3D3; 
+            padding: 10px 0;
+
+        }
+       #info{
+        padding: 2%;
+        text-align: center;
+       }
+      .contact{
+        position: relative;
+      }
+    
+
+
+
+        </style> 
+    </head>
+    <body>
+        
+  
+        <div class="col-12 header" id="head">
+            <div id="logo">
+                <a href=""><img src="./pic/aryanLOGO.png" alt="" height="60px"></a>
+            </div>
+            <div class="col-5" id="menu">
+                <ul id="ul-head">    
+                    <div class="dropdown">
+                        <a href="index.html"><button class="dropbtn">HOME</button></a>
+                      </div>
+                      <div class="dropdown">
+                        <button class="dropbtn">PRODUCTS</button>
+                        <div class="dropdown-content">
+                        <span id="hover-head">Normal Works</span>
+                          <a href="./numberplate_html/numberplate.html">Number plates</a>
+                          <a href="./keychain_html/keychain.html">key chain</a>
+                          <a href="./signboard_html/signboard.html">Sign board</a>
+                          <a href="paint_html/paint.html">Painting</a>
+                          <span id="hover-head">Premium Work</span>
+                          <a href="wrap_html/wrap.html">Wraping</a>
+                          <a href="neon_html/neon.html">Neon board</a>
+                          <a href="ppf_html/ppf.html">paint protection</a>
+                          <a href="other_html/other.html">other services</a>
+                        </div>
+                      </div>
+                      <div class="dropdown">
+                        <a href="about.html"><button class="dropbtn">ABOUT US</button></a>
+                        <!-- <div class="col-12 dropdown-content" style="background-color: inherit;">
+                            <video src="./pic/backvideo.mp4" autoplay loop></video>
+                          <img src="img_5terre.jpg" alt="Cinque Terre" width="300" height="200">
+                          
+                          </div> -->
+                      </div>
+                      <div class="dropdown">
+                       <a href="Contact.html"> <button class="dropbtn">CONTACT US</button></a>
+                        
+                      </div>
+                     
+                        
+                </ul>
+            
+                
+            </div>
+        </div>
+       
+       
+            
+            <div class="middle" id="banner">
+     
+                <div class=" " id="mid-block-1">
+                <img src="./pic/contact_banner.jpg" alt=" " width="100%" class="cont-banner">
+                 </div>
+                 <div class="contact-us">
+                   <div class="heade"> <h2>Contact US</h2></div>
+                   <div class="contact-query"><span>To raise any order related query</span></div>
+
+                 </div>
+                 <div class="cont col-10" >
+                    <div class="col-3 zoom-in">
+                    <div class="phone-num">
+                       <div class="icon"><i class="material-icons" id="phone">phone</i></div>
+                       <div class="con">
+                            <div class="det"><span id="hed" style="line-height:35px;">call to any questions:</span> </div>
+                              <span id="info1"> +917666587204 <br>+917666587324</span>
+                       </div>
+                    </div>
+                    </div>
+                    <div class="col-3 zoom-in">
+                    <div class="g-mail"><div class="icon"><i class="material-icons" id="phone">mail</i></div>
+                    <div class="con">
+                         <div class="det"><span id="hed">Email:</span> </div>
+                           <span id="info1"style="line-height: 40px;"> aryanredium@gmail.com</span>
+                    </div>
+                   </div>
+                </div>
+                   <div class="col-3 zoom-in">
+                    <div class="g-mail"><div class="icon"><i class="material-icons" id="phone">location_on</i></div>
+                    <div class="con">
+                         <div class="det"><span id="hed">Location/place:</span> </div>
+                           <span id="info1" style="line-height: 40px;"> Alkuti,Ahilyanagar</span>
+                    </div>
+                   </div>
+                   </div>
+                 </div>
+                 <style>
+                    
+                    .zoom-in{
+                        animation-name: zoom-in;
+                        animation-duration: .6s;
+                    }
+                    @keyframes zoom-in{
+                        0%{
+                            transform: scale(0);
+                        }
+                        100%{
+                            transform: scale(1);
+                        }
+                    }
+                    .leave{
+                        align-items: center;
+                       text-align: center;
+                        height: 100%;
+                      
+                    }
+                    .leave #head-leave{
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        padding: 1%;
+                        color: #161615;
+                        align-items: center;
+                    }
+                    .leave  label{
+                        color: rgb(255, 255, 255);
+                        font-weight: 900;
+            
+                       
+                    }
+                    .leave input,textarea{
+                        background-color:rgb(255, 249, 250);
+                        height:50px;
+                        border-radius: 10px;
+                        margin: 10px 0;
+                        width: 80%;
+                        border: none;
+                        box-shadow: 0px 0px 6px black;
+                    }
+                   .leave #sub{
+                    
+                        background-color: #323232;
+                        color: azure;
+                        height: 50px;
+                        width: 150px;
+                        border-radius: 15px;
+                        border: none;
+                        box-shadow: 0px 0px 5px black;
+
+                        
+                    } 
+                    .leave #sub:hover{
+                        color: #f2f2f2;
+                        background-color: rgb(0, 0, 0);
+                    }
+                    .leave textarea:hover,input:hover{
+                        
+                        background-color: rgb(226, 222, 222);
+                    }
+                    .leave ::placeholder{
+                        text-align: center;
+                        color: #350505;
+                    }
+                    .leave  form{
+                        padding: 20px 0;
+                    }
+                     
+                 </style>
+                 <div class="map">
+                   <center> <div> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.1420621230072!2d74.23146417502689!3d19.057490582143277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdcd7001d989abb%3A0x62ebbeb372bc8701!2sAryan%20Radium!5e0!3m2!1sen!2sin!4v1735808453193!5m2!1sen!2sin"  width="600" height="400" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></center>
+                    </div> 
+                         <center><div class="col-5 leave">  <h1 id="head-leave">Leave a message</h1>
+                            <form action="#" enctype="multipart/form-data" method="post" onsubmit="return validate()">
+                                <input  type="text" name="FirstName" id="Firstname" placeholder="enter first name" onkeyup=" javascript:return validFname()">
+                                <br><span id="errorfname"  style="color: rgb(255, 255, 255);display:none; font-size:smaller">* Please First Name</span><br>
+
+                                <input type="text" name="Lastname" id="Lastname" placeholder="enter Last name" onkeyup=" return validLname()">
+                               <br> <span id="errorlname"  style="color: rgb(255, 255, 255);display:none; font-size:smaller">* Please Last Name</span><br>
+
+                                <input type="text" name="Email" id="Email" placeholder="enter Email" onkeyup="return validateEmail()">
+                               <br> <span id="errorEmail"  style="color: rgb(255, 255, 255);display:none; font-size:smaller">* Please Enter your Valid Email ID</span><br>
+
+                                <textarea name="address" id="address" onkeyup="return  validAdress()" placeholder="Enter Message.."></textarea>
+                                <br><span id="erroraddress"  style="color: rgb(255, 254, 254);display:none; font-size:smaller">* Please Enter Address</span><br>
+
+                             
+                                <input type="submit" name="submit"  id="sub" value="submit" onclick="javascript:return validate()">
+                            </form>
+                        </div></center>
+                </div>
+ 
+   
+       
+        
+        <div class="footer" id="foot">
+            <div id="info">
+            <p>© 2025 Aryan Redium. All rights reserved.</p>
+            <p>Working Hours: Monday to Saturday: 9:00 AM - 7:00 PM | Sunday: Closed</p>
+        </div>
+        </div>
+       
+    </body>  
+</html>

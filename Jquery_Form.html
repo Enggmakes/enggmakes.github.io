@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FORM.COM</title>
+    <script src="jquery.js"></script>
+</head>
+<script>
+    $(document).ready(function(){
+        $("#sub").click(function(){
+          //  alert("You fill this form");
+        })
+    })
+    function validate(){
+    var FirstName=$("#Firstname").val();
+    if(FirstName==""){
+           // alert("Enter first name");
+            $("#errorfname").show();
+            $("#Firstname").focus();
+            return false;
+    }
+    else{
+        $("#errorfname").hide();
+    }
+    var lastName=$("#Lastname").val();
+    if(lastName==""){
+       // alert("Please enter Last name");
+        $("#errorlname").show();
+        $("#Lastname").focus();
+        return false;
+    } 
+    else{
+        $("#errorlname").hide();
+    }
+
+    var email=$("#Email").val();
+    if(email=="")
+    {
+       //alert("Please Enter email id");
+        $("#Email").focus();
+        return false;
+    }
+    var atpos=email.indexOf("@");
+    var dotpos=email.indexOf(".");
+    if(atpos< 1 || (dotpos-atpos)<2)
+    {
+       /// alert("please enter valid email address");
+        // to dipslay red small text error under input box 
+        $("#errorEmail").show();
+        $("#Email").focus();
+        return false;
+    }
+    else{
+        $("#errorEmail").hide();
+    }
+
+    //Mobile validation
+
+    var Mob=$("#mob").val();
+    if(Mob==""){
+      //  alert("please enter Mobile Number");
+       $("#errormob").show();
+       $("#mob").focus();
+        return false;
+    }
+    else{
+        $("#errormob").hide();
+
+    }
+    if(Mob.length !=10){
+       // alert("mobile number should be 10 Digits");
+       $("#mob").focus();
+        return false;
+    }
+    var regexp=/^[6-9]\d{9}$/;
+    if(!Mob.match(regexp)){
+        $("#errormob").show();           
+        $("#mob").focus();
+        return false;
+    }
+    else{
+        $("#errormob").hide();           
+    } 
+//Password Validation
+
+    var pass=$("#password").val();
+    if(pass==""){
+        $("#errorpass").show();
+        $("#password").focus();
+        return false;    
+    }
+    else{
+        $("#errorpass").hide();
+
+    }
+    if(pass.length<6){
+   // alert("Enter min 6 digit");
+    return false;
+    }
+   //Address validation
+
+    var add=$("#address").val();
+    if(add==""){
+       // alert("please enter valid address");
+        $("#erroraddress").show();
+        $("#address").focus();
+        return false;
+    }
+    else{
+       $("#erroraddress").hide();
+
+    }
+
+    var states= $("#state").val();
+   if(states==""){
+    //alert("Please select correct state");
+    $("#errorstate").show();
+   // document.getElementById("state").focus();
+    return false;
+   }
+   else{
+    $("#errorstate").hide();
+   }  
+
+   var gen=$('input[name="gender"]');
+   var g1=gen[0].checked;
+   var g2=gen[1].checked;
+   if(g1== false && g2== false){
+    $("#errorgen").show();
+   // alert("Please select Gender");\
+    return false;
+   } 
+   else{
+    $("#errorgen").hide();
+   }   
+   var blood= $("#bloodgroup").val();
+   if(blood==""){
+   // alert("Please select correct blood");
+    $("#errorblood").show();
+    $("#bloodgroup").focus();
+    return false;
+
+   }
+   else{
+   $("#errorblood").hide();
+   }
+
+
+  var che=$('input[name="checkbox"]');
+  var q1=che[0].checked;
+  var q2=che[1].checked;
+   if(q1==false && q2==false)
+   {
+    $("#errorcheck").show();
+    return false;
+   }
+   else{
+    $("#errorcheck").hide();
+   }
+ }
+
+function validFname(){
+    var FirstName=$("#Firstname").val();
+    if(FirstName==""){
+           // alert("Enter first name");
+            $("#errorfname").show();
+            $("#Firstname").focus();
+            return false;
+    }
+    else{
+        $("#errorfname").hide();
+    }
+}
+function validLname(){
+    var lastName=$("#Lastname").val();
+    if(lastName==""){
+       // alert("Please enter Last name");
+        $("#errorlname").show();
+        $("#Lastname").focus();
+        return false;
+    } 
+    else{
+        $("#errorlname").hide();
+    }
+}
+
+   function validateEmail(){
+    var email=$("#Email").val();
+    if(email=="")
+    {
+      // alert("Please Enter email id");
+        $("#Email").focus();
+        return false;
+    }
+    var atpos=email.indexOf("@");
+    var dotpos=email.indexOf(".");
+    if(atpos< 1 || (dotpos-atpos)<2)
+    {
+       // alert("please enter valid email address");
+        // to dipslay red small text error under input box 
+        $("#errorEmail").show();
+        $("#Email").focus();
+        return false;
+    }
+    else{
+        $("#errorEmail").hide();
+    }
+    }
+
+    function validmobile(){
+        var Mob=$("#mob").val();
+        if(Mob==""){
+          //  alert("please enter Mobile Number");
+           $("#errormob").show();
+           $("#mob").focus();
+            return false;
+        }
+        else{
+            $("#errormob").hide();
+    
+        }
+        if(Mob.length !=10){
+            $("#errormob").show();           
+            $("#mob").focus();
+            return false;
+        }
+        else{
+            $("#errormob").hide();
+    
+        }
+        var regexp=/^[6-9]\d{9}$/;
+        if(!Mob.match(regexp)){
+            $("#errormob").show();           
+            $("#mob").focus();
+            return false;
+        }
+        else{
+            $("#errormob").hide();           
+        }     
+    }
+
+function validatepassword(){
+
+    var pass=$("#password").val();
+    if(pass==""){
+        $("#errorpass").show();
+        $("#password").focus();
+        return false;    
+    }
+    else{
+        $("#errorpass").hide();
+
+    }
+    if(pass.length<6){
+        $("#errorpass").show();
+   // alert("Enter min 6 digit");
+    return false;
+    }
+    else{
+        $("#errorpass").hide();
+
+    }
+}
+
+
+
+function validAdress(){
+var add=$("#address").val();
+    if(add==""){
+       // alert("please enter valid address");
+        $("#erroraddress").show();
+        $("#address").focus();
+        return false;
+    }
+    else{
+       $("#erroraddress").hide();
+
+    }
+   }
+
+   function valideState(){
+       var states= $("#state").val();
+   if(states==""){
+   // alert("Please select correct state");
+    $("#errorstate").show();
+   // document.getElementById("state").focus();
+    return false;
+
+   }
+   else{
+    $("#errorstate").hide();
+   }  
+   
+   }
+
+   function valideBloodGroup(){
+   var blood= $("#bloodgroup").val();
+   if(blood==""){
+   // alert("Please select correct blood");
+    $("#errorblood").show();
+   // $("#bloodgroup").focus();
+    return false;
+
+   }
+   else{
+   $("#errorblood").hide();
+   }
+   }
+   
+</script>
+
+<body> 
+    <center>
+        <h1>GENERAL INFORMATION</h1>
+
+        <form action="#" enctype="multipart/form-data" method="post" onsubmit="return validate()">
+            <label>FirstName:</label><br>
+            <input type="text" name="FirstName" id="Firstname" placeholder="enter first name" onkeyup=" javascript:return validFname()"><br>
+            <span id="errorfname"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please First Name</span><br>
+
+
+            <label>LastName:</label><br>
+            <input type="text" name="Lastname" id="Lastname" placeholder="enter Last name" onkeyup=" return validLname()"><br>
+            <span id="errorlname"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please Last Name</span><br>
+
+            <label>Email:</label><br>
+            <input type="text" name="Email" id="Email" placeholder="enter Email" onkeyup="return validateEmail()"><br>
+            <span id="errorEmail"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please Enter your Valid Email ID</span><br>
+
+            <label>MobileNumber:</label><br>
+            <input type="text" name="mob" id="mob" placeholder="enter mobile number" onkeyup="return validmobile()"><br>
+            <span id="errormob"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please Enter valid Mobile Number</span><br>
+
+
+            <label>Password:</label><br>
+            <input type="password" name="password" id="password" placeholder="enter password" onkeyup="return validatepassword()"><br>
+            <span id="errorpass"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please Enter Strong Password</span><br>
+            <br>
+            <label>Address:</label><br>
+           <textarea name="address" id="address" onkeyup="return  validAdress()" rows="3" cols="10"></textarea> <br>
+           <span id="erroraddress"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please Enter Address</span><br>
+
+
+            <select name="states" id="state" onchange="return valideState()">
+            <option value="">select state</option>
+            <option value="maharashtra">maharashtra</option>
+            <option value="gujarat">gujarat</option>
+            <option value="andhrapradesh">andhra pradesh</option>
+            <option value="keral">Keral</option>
+            <option value="karnataka">karnataka</option>
+            <option value="tamil nadu">Tamil nadu</option>
+        </select><br>
+        <span id="errorstate"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please Select Correct State</span><br>
+        <br>
+            <label>male</label>
+            <input type="radio" id="male" name="gender" value="male" class="gender">
+            <label>female</label>
+            <input type="radio" id="female" name="gender" value="female" class="gender"><br>
+            <span id="errorgen"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please Select Gender</span><br>
+
+
+
+        <select name="blood" id="bloodgroup" onchange="return valideBloodGroup()">
+        <option value="">select blood group</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option> 
+        </select><br><br>
+        <span id="errorblood"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please Select Correct Blood Group</span><br>
+            <input type="file" placeholder="upload your Identity Photo" id="file"> <br>
+            <label>Are You able to read or write:</label><br> 
+            YES<input type="checkbox" name="checkbox" value="" id="yes"><br>
+           NO<input type="checkbox" name="checkbox" value="" id="no"><br><br>
+           <span id="errorcheck"  style="color: rgb(255, 0, 0);display:none; font-size:smaller">* Please Select checkbox</span><br>
+
+            <input type="submit" name="submit"  id="sub" value="submit" onclick="javascript:return validate()">
+        </form>
+    </center>
+</body>
+
+</html>

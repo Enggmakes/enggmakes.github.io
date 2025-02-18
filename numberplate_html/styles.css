@@ -1,0 +1,117 @@
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    }
+    .dropbtn {
+        background-color: inherit;
+        color: white;
+    
+          padding: 16px;
+          font-size: 15px;
+          border: none;
+          cursor: pointer;
+        }
+        .dropbtn:hover {
+          
+            color: rgb(184, 172, 245);
+            transition: 0.3s linear ease-in-out;
+          }
+        
+      
+        .dropdown {
+          position: relative;
+          display: inline-block;
+        }
+        
+        
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          
+          background-color: #f9f9f9;
+          min-width: 160px;
+          border-top:2px solid yellow;
+          box-shadow: 0px 8px 16px 2px rgba(0, 0, 0, 0.2);
+          z-index: 1;
+        }
+        
+    
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+    
+        }
+        
+    
+        .dropdown-content a:hover {
+          padding: 12px 20px;
+          transition: all 0.3s ease-in;
+          background-color: #f1f1f1}
+        
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        
+     
+        .dropdown:hover .dropbtn {
+          background-color: #2d2e2d;
+        }
+    .sec-1{
+      color: black;
+      margin: 20px;
+      background-color: #b0afaf;
+      border: 2px solid;
+    }
+    .li-1{
+      line-height:35px;
+      list-style-type: none;
+    }
+    .li-1:hover{
+      transition: 0.3s;
+      padding-left: 6px;
+    
+    }
+    #hover-head{
+    
+      margin-left: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .slideInUp{
+      animation-name: slideInUp;
+      animation-duration: .6s;
+    }
+    @keyframes slideInUp{
+      0%{
+              transform: translateY(15%);
+      }
+      100%{
+          transform: translateY(0);
+      }
+      
+    }
+    ::-webkit-scrollbar {
+      width: 1px;
+      display: none;
+    }
+    
+    /* Track */
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 5px rgb(255, 255, 255); 
+      border-radius: 10px;
+    }
+     
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+      background: rgb(173, 51, 51); 
+      border-radius: 10px;
+    }
+    
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+      background: #b30000; 
+    }
+    
