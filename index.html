@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lovely Greeting Page</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+        .page {
+            display: none;
+            margin-top: 100px;
+            font-size: 24px;
+            animation: fadeIn 2s;
+        }
+        .rose-container {
+            display: none;
+            margin-top: 50px;
+        }
+        .rose-container img {
+            width: 100px;
+            margin: 10px;
+            animation: bloom 3s infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bloom {
+            0% { transform: scale(0.8); }
+            50% { transform: scale(1); }
+            100% { transform: scale(0.8); }
+        }
+        button {
+            background: #ff4b5c;
+            border: none;
+            padding: 10px 20px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Love Page</h1>
+    <button onclick="showGreeting(1)">Click for Love</button>
+    
+    <div class="page" id="page1">You are so special and loved! ❤️</div>
+    <div class="page" id="page2">Your smile makes the world brighter! 😊</div>
+    <div class="page" id="page3">You deserve all the happiness! 💖</div>
+    
+    <div class="rose-container" id="roses">
+        <img src="https://i.imgur.com/Y9Zyojl.png" alt="Rose">
+        <img src="https://i.imgur.com/Y9Zyojl.png" alt="Rose">
+        <img src="https://i.imgur.com/Y9Zyojl.png" alt="Rose">
+    </div>
+    
+    <script>
+        let count = 0;
+        function showGreeting(num) {
+            if (count < 3) {
+                document.getElementById(`page${count + 1}`).style.display = "block";
+                count++;
+            } else {
+                document.getElementById("roses").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
