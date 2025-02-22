@@ -5,70 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovely Greeting Page</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300;400;600&display=swap');
         body {
             text-align: center;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            font-family: 'Poppins', sans-serif;
             color: white;
+            padding: 20px;
+            background-image: url('https://www.transparenttextures.com/patterns/linen.png');
+        }
+        .container {
+            margin-top: 50px;
         }
         .page {
             display: none;
-            margin-top: 100px;
-            font-size: 24px;
-            animation: fadeIn 2s;
+            font-size: 28px;
+            font-weight: bold;
+            margin-top: 30px;
+            animation: fadeIn 2s ease-in-out;
+            font-family: 'Dancing Script', cursive;
+            color: #fff5f8;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .rose-container {
             display: none;
-            margin-top: 50px;
+            margin-top: 30px;
         }
         .rose-container img {
-            width: 100px;
-            margin: 10px;
-            animation: bloom 3s infinite;
+            width: 120px;
+            margin: 15px;
+            animation: bloom 3s infinite alternate ease-in-out;
         }
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
         }
         @keyframes bloom {
-            0% { transform: scale(0.8); }
-            50% { transform: scale(1); }
-            100% { transform: scale(0.8); }
+            0% { transform: scale(0.9); }
+            100% { transform: scale(1.1); }
         }
         button {
             background: #ff4b5c;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
             color: white;
-            font-size: 18px;
+            font-size: 20px;
             cursor: pointer;
             margin-top: 20px;
-            border-radius: 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        button:hover {
+            background: #ff2e44;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <h1>Welcome to the Love Page</h1>
-    <button onclick="showGreeting(1)">Click for Love</button>
-    
-    <div class="page" id="page1">You are so special and loved! ❤️</div>
-    <div class="page" id="page2">Your smile makes the world brighter! 😊</div>
-    <div class="page" id="page3">You deserve all the happiness! 💖</div>
-    
-    <div class="rose-container" id="roses">
-        <img src="https://i.imgur.com/Y9Zyojl.png" alt="Rose">
-        <img src="https://i.imgur.com/Y9Zyojl.png" alt="Rose">
-        <img src="https://i.imgur.com/Y9Zyojl.png" alt="Rose">
+    <div class="container">
+        <h1 style="font-family: 'Dancing Script', cursive; font-size: 50px;">Welcome to the Love Page 💕</h1>
+        <button onclick="showGreeting()">Click for Love</button>
+        
+        <div class="page" id="page1">You are cherished beyond words! 💖</div>
+        <div class="page" id="page2">Your presence makes the world magical! ✨</div>
+        <div class="page" id="page3">Love and happiness always surround you! 🌹</div>
+        
+        <div class="rose-container" id="roses">
+            <img src="https://i.imgur.com/Y9Zyojl.png" alt="Rose">
+            <img src="https://i.imgur.com/Y9Zyojl.png" alt="Rose">
+            <img src="https://i.imgur.com/Y9Zyojl.png" alt="Rose">
+        </div>
     </div>
     
     <script>
         let count = 0;
-        function showGreeting(num) {
+        function showGreeting() {
             if (count < 3) {
                 document.getElementById(`page${count + 1}`).style.display = "block";
                 count++;
             } else {
-                document.getElementById("roses").style.display = "block";
+                document.getElementById("roses").style.display = "flex";
+                document.getElementById("roses").style.justifyContent = "center";
             }
         }
     </script>
