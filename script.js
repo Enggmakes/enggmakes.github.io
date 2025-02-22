@@ -13,17 +13,28 @@ class Paper {
   currentPaperX = 0;
   currentPaperY = 0;
   rotating = false;
+  
   init(paper) {
-    document.addEventListener('mousemove', (e) => {
-      if(!this.rotating) {
-        this.mouseX = e.clientX;
-        this.mouseY = e.clientY;
-        this.velX = this.mouseX - this.prevMouseX;
-        this.velY = this.mouseY - this.prevMouseY;
+    document.addEventListener('mousemove', (e) => this.handleMove(e.clientX, e.clientY));
+    document.addEventListener('touchmove', (e) => {
+      if (e.touches.length > 0) {
+        this.handleMove(e.touches[0].clientX, e.touches[0].clientY);
       }
-      const dirX = e.clientX - this.mouseTouchX;
-      const dirY = e.clientY - this.mouseTouchY;
-      const dirLength = Math.sqrt(dirX*dirX+dirY*dirY);
-      const dirNormalizedX = dirX / dirLength;
-      const dirNormalizedY = dirY / dirLength;
-      const angle = Math.atan2(dirNormalizedY, dirNormalizedX);
+    }, { passive: false });
+  }
+  
+  handleMove(clientX, clientY) {
+    if (!this.rotating) {
+      this.mouseX = clientX;
+      this.mouseY = clientY;
+      this.velX = this.mouseX - this.prevMouseX;
+      this.velY = this.mouseY - this.prevMouseY;
+    }
+    const dirX = clientX - this.mouseTouchX;
+    const dirY = clientY - this.mouseTouchY;
+    const dirLength = Math.sqrt(dirX * dirX + dirY * dirY);
+    const dirNormalizedX = dirX / dirLength;
+    const dirNormalizedY = dirY / dirLength;
+    const angle = Math.atan2(dirNormalizedY, dirNormalizedX);
+  }
+}
