@@ -3,76 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draggable Paper Stack</title>
+    <title>Bluetooth Robot Control</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: url('https://www.transparenttextures.com/patterns/white-paper.png');
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-        }
-        .container {
-            position: relative;
-            width: 300px;
-            text-align: center;
-        }
-        .paper {
-            position: absolute;
-            width: 100%;
-            padding: 20px;
-            background: white;
-            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-            border: 1px solid #ccc;
-            font-family: Arial, sans-serif;
-            user-select: none;
-            cursor: grab;
-        }
-        .paper img {
-            width: 100%;
-            border-radius: 5px;
-        }
+        body { text-align: center; font-family: Arial, sans-serif; }
+        button { font-size: 20px; padding: 10px; margin: 10px; cursor: pointer; }
+        .controls { display: flex; flex-direction: column; align-items: center; }
+        .row { display: flex; gap: 10px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="paper" id="paper1" style="top: 0; z-index: 3;">How can be someone so cute ❤️</div>
-        <div class="paper" id="paper2" style="top: 40px; z-index: 2;">Drag the papers to move!</div>
-        <div class="paper" id="paper3" style="top: 80px; z-index: 1;">
-            <img src="https://via.placeholder.com/300" alt="Image">
+    <h1>Bluetooth Robot Controller</h1>
+    <button onclick="connectBluetooth()">Connect to Robot</button>
+    <div class="controls">
+        <button onclick="sendCommand('F')">⬆️ Forward</button>
+        <div class="row">
+            <button onclick="sendCommand('L')">⬅️ Left</button>
+            <button onclick="sendCommand('S')">⏹️ Stop</button>
+            <button onclick="sendCommand('R')">➡️ Right</button>
         </div>
+        <button onclick="sendCommand('B')">⬇️ Backward</button>
     </div>
-    
+
     <script>
-        let activePaper = null;
-        let offsetX = 0, offsetY = 0;
+        let bluetoothDevice;
+        let characteristic;
 
-        document.querySelectorAll('.paper').forEach(paper => {
-            paper.addEventListener('touchstart', (e) => {
-                activePaper = paper;
-                let touch = e.touches[0];
-                offsetX = touch.clientX - paper.offsetLeft;
-                offsetY = touch.clientY - paper.offsetTop;
-                paper.style.zIndex = 10;
-            });
+        async function connectBluetooth() {
+            try {
+                bluetoothDevice = await navigator.bluetooth.requestDevice({
+                    acceptAllDevices: true,
+                    optionalServices: ['00001101-0000-1000-8000-00805f9b34fb'] // Standard Serial UUID for HC-05/HC-06
+                });
 
-            paper.addEventListener('touchmove', (e) => {
-                if (!activePaper) return;
-                let touch = e.touches[0];
-                activePaper.style.left = touch.clientX - offsetX + 'px';
-                activePaper.style.top = touch.clientY - offsetY + 'px';
-            });
+                const server = await bluetoothDevice.gatt.connect();
+                const service = await server.getPrimaryService('00001101-0000-1000-8000-00805f9b34fb');
+                characteristic = await service.getCharacteristic('00002a37-0000-1000-8000-00805f9b34fb');
 
-            paper.addEventListener('touchend', () => {
-                if (activePaper) {
-                    activePaper.style.zIndex = 3;
-                }
-                activePaper = null;
-            });
-        });
+                alert("Connected to Robot!");
+            } catch (error) {
+                alert("Bluetooth Connection Failed: " + error);
+            }
+        }
+
+        async function sendCommand(command) {
+            if (!characteristic) {
+                alert("Please connect to the robot first.");
+                return;
+            }
+
+            const encoder = new TextEncoder();
+            await characteristic.writeValue(encoder.encode(command));
+            alert("Sent: " + command);
+        }
     </script>
 </body>
 </html>
