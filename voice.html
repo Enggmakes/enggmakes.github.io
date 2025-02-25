@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Voice Control</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>🎙️ Voice Control</h1>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Manual Control</a>
+        <a href="voice.html">Voice Control</a>
+    </nav>
+
+    <!-- Voice Control Section -->
+    <p>Say a command: "<span id="currentCommand">move forward</span>"</p>
+    <button onclick="startVoiceControl()">🎤 Start Voice Control</button>
+
+    <!-- Custom Voice Commands -->
+    <h3>Set Custom Voice Commands</h3>
+    <label>Move Forward:</label> <input id="cmdForward" type="text" placeholder="e.g. Go ahead"><br>
+    <label>Move Backward:</label> <input id="cmdBackward" type="text" placeholder="e.g. Reverse"><br>
+    <label>Turn Left:</label> <input id="cmdLeft" type="text" placeholder="e.g. Turn left"><br>
+    <label>Turn Right:</label> <input id="cmdRight" type="text" placeholder="e.g. Turn right"><br>
+    <label>Stop:</label> <input id="cmdStop" type="text" placeholder="e.g. Halt"><br>
+    <button onclick="saveCommands()">✅ Save Commands</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
