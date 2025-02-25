@@ -3,58 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bluetooth Robot Control</title>
-    <style>
-        body { text-align: center; font-family: Arial, sans-serif; }
-        button { font-size: 20px; padding: 10px; margin: 10px; cursor: pointer; }
-        .controls { display: flex; flex-direction: column; align-items: center; }
-        .row { display: flex; gap: 10px; }
-    </style>
+    <title>Robot Control</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Bluetooth Robot Controller</h1>
-    <button onclick="connectBluetooth()">Connect to Robot</button>
+
+    <h1>Robot Manual Controller</h1>
+    
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Manual Control</a>
+        <a href="voice.html">Voice Control</a>
+    </nav>
+
+    <!-- Bluetooth Connection -->
+    <button onclick="connectBluetooth()">🔗 Connect to Robot</button>
+
+    <!-- Manual Control Buttons -->
     <div class="controls">
         <button onclick="sendCommand('F')">⬆️ Forward</button>
-        <div class="row">
-            <button onclick="sendCommand('L')">⬅️ Left</button>
-            <button onclick="sendCommand('S')">⏹️ Stop</button>
-            <button onclick="sendCommand('R')">➡️ Right</button>
-        </div>
+        <br>
+        <button onclick="sendCommand('L')">⬅️ Left</button>
+        <button onclick="sendCommand('S')">🛑 Stop</button>
+        <button onclick="sendCommand('R')">➡️ Right</button>
+        <br>
         <button onclick="sendCommand('B')">⬇️ Backward</button>
     </div>
 
-    <script>
-        let bluetoothDevice;
-        let characteristic;
-
-        async function connectBluetooth() {
-            try {
-                bluetoothDevice = await navigator.bluetooth.requestDevice({
-                    acceptAllDevices: true,
-                    optionalServices: ['00001101-0000-1000-8000-00805f9b34fb'] // Standard Serial UUID for HC-05/HC-06
-                });
-
-                const server = await bluetoothDevice.gatt.connect();
-                const service = await server.getPrimaryService('00001101-0000-1000-8000-00805f9b34fb');
-                characteristic = await service.getCharacteristic('00002a37-0000-1000-8000-00805f9b34fb');
-
-                alert("Connected to Robot!");
-            } catch (error) {
-                alert("Bluetooth Connection Failed: " + error);
-            }
-        }
-
-        async function sendCommand(command) {
-            if (!characteristic) {
-                alert("Please connect to the robot first.");
-                return;
-            }
-
-            const encoder = new TextEncoder();
-            await characteristic.writeValue(encoder.encode(command));
-            alert("Sent: " + command);
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
