@@ -3,33 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robot Control</title>
+    <title>Joystick Robot Controller</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1>Robot Manual Controller</h1>
-    
+    <h1>🎮 Joystick Robot Controller</h1>
+
     <!-- Navigation -->
     <nav>
-        <a href="index.html">Manual Control</a>
-        <a href="voice.html">Voice Control</a>
+        <a href="index.html">🎮 Joystick Control</a>
+        <a href="voice.html">🎙️ Voice Control</a>
     </nav>
 
     <!-- Bluetooth Connection -->
-    <button onclick="connectBluetooth()">🔗 Connect to Robot</button>
+    <button class="connect-btn" onclick="connectBluetooth()">🔗 Connect HC-05</button>
 
-    <!-- Manual Control Buttons -->
-    <div class="controls">
-        <button onclick="sendCommand('F')">⬆️ Forward</button>
-        <br>
-        <button onclick="sendCommand('L')">⬅️ Left</button>
-        <button onclick="sendCommand('S')">🛑 Stop</button>
-        <button onclick="sendCommand('R')">➡️ Right</button>
-        <br>
-        <button onclick="sendCommand('B')">⬇️ Backward</button>
+    <!-- Joystick Area -->
+    <div id="joystickContainer">
+        <div id="joystick"></div>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.9.0/nipplejs.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
