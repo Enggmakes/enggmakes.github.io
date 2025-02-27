@@ -1,14 +1,7 @@
 let bluetoothDevice;
 let characteristic;
-let customCommands = {
-    forward: "move forward",
-    backward: "move backward",
-    left: "turn left",
-    right: "turn right",
-    stop: "stop"
-};
 
-// 🔗 Bluetooth Connection
+// 🔗 Bluetooth Connection to HC-05
 async function connectBluetooth() {
     try {
         bluetoothDevice = await navigator.bluetooth.requestDevice({
@@ -20,7 +13,7 @@ async function connectBluetooth() {
         const service = await server.getPrimaryService('00001101-0000-1000-8000-00805f9b34fb');
         characteristic = await service.getCharacteristic('00002a37-0000-1000-8000-00805f9b34fb');
 
-        alert("Connected to Robot!");
+        alert("Connected to HC-05!");
     } catch (error) {
         alert("Bluetooth Connection Failed: " + error);
     }
@@ -29,48 +22,36 @@ async function connectBluetooth() {
 // 📡 Send Command to Robot
 async function sendCommand(command) {
     if (!characteristic) {
-        alert("Please connect to the robot first.");
+        alert("Please connect to HC-05 first.");
         return;
     }
 
     const encoder = new TextEncoder();
     await characteristic.writeValue(encoder.encode(command));
-    alert("Sent: " + command);
+    console.log("Sent: " + command);
 }
 
-// 🎙️ Start Voice Control
-function startVoiceControl() {
-    const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
-    recognition.lang = 'en-US';
-    recognition.start();
+// 🎮 Joystick Control
+let joystick = nipplejs.create({
+    zone: document.getElementById("joystickContainer"),
+    mode: "dynamic",
+    color: "red",
+    size: 150
+});
 
-    recognition.onresult = function (event) {
-        let spokenCommand = event.results[0][0].transcript.toLowerCase();
-        document.getElementById("currentCommand").innerText = "You said: " + spokenCommand;
+joystick.on("move", (evt, data) => {
+    let angle = data.angle.degree;
+    if (angle >= 45 && angle <= 135) {
+        sendCommand("F");  // Move Forward
+    } else if (angle >= 225 && angle <= 315) {
+        sendCommand("B");  // Move Backward
+    } else if (angle > 135 && angle < 225) {
+        sendCommand("L");  // Move Left
+    } else if (angle > 315 || angle < 45) {
+        sendCommand("R");  // Move Right
+    }
+});
 
-        if (spokenCommand.includes(customCommands.forward)) {
-            sendCommand('F');
-        } else if (spokenCommand.includes(customCommands.backward)) {
-            sendCommand('B');
-        } else if (spokenCommand.includes(customCommands.left)) {
-            sendCommand('L');
-        } else if (spokenCommand.includes(customCommands.right)) {
-            sendCommand('R');
-        } else if (spokenCommand.includes(customCommands.stop)) {
-            sendCommand('S');
-        } else {
-            alert("Unknown Command: Try again.");
-        }
-    };
-}
-
-// 📝 Save Custom Commands
-function saveCommands() {
-    customCommands.forward = document.getElementById("cmdForward").value || "move forward";
-    customCommands.backward = document.getElementById("cmdBackward").value || "move backward";
-    customCommands.left = document.getElementById("cmdLeft").value || "turn left";
-    customCommands.right = document.getElementById("cmdRight").value || "turn right";
-    customCommands.stop = document.getElementById("cmdStop").value || "stop";
-    
-    alert("Custom Commands Updated!");
-}
+joystick.on("end", () => {
+    sendCommand("S");  // Stop when joystick is released
+});
