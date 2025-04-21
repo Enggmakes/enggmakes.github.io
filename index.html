@@ -3,28 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joystick Robot Controller</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cashfree Payment</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .btn { background: #007BFF; color: #fff; padding: 10px 20px; border: none; cursor: pointer; font-size: 18px; }
+        .btn:hover { background: #0056b3; }
+    </style>
 </head>
 <body>
 
-    <h1>🎮 Joystick Robot Controller</h1>
+    <h2>Complete Your Payment</h2>
+    <p><strong>Product:</strong> <span id="productName">Loading...</span></p>
+    <p><strong>Price:</strong> Rs. <span id="productPrice">Loading...</span></p>
 
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html">🎮 Joystick Control</a>
-        <a href="voice.html">🎙️ Voice Control</a>
-    </nav>
+    <button class="btn" onclick="makePayment()">Pay Now</button>
 
-    <!-- Bluetooth Connection -->
-    <button class="connect-btn" onclick="connectBluetooth()">🔗 Connect HC-05</button>
+    <a href="insta.mp4" download="rakshabandhan">
+        <button type="button">Download</button>
+    </a>
 
-    <!-- Joystick Area -->
-    <div id="joystickContainer">
-        <div id="joystick"></div>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.9.0/nipplejs.min.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>
